@@ -3,11 +3,11 @@
 ## Installation
 - Clone the repo
 ```
-git clone 
+git clone git@github.com:shankarlmc/csitan-django-workshop.git
 ```
 - Change the dir and setup requirements
 ```
-cd quiz
+cd csitan-django-workshop
 python3 -m venv .venv
 source .venv/bin/activate # for linux or mac
 .venv\Scripts\activate # for windwos
@@ -17,4 +17,8 @@ pip install -r requirements.txt
 ```
 cp .env-sample .env
 ```
-- Run the application
+- Migrate and run application
+```
+python3 manage.py migrate
+python manage.py runserver
+```
