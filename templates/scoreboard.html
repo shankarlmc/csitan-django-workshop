@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+{% block content %}
+<div class="result_box activeResult">
+    <div class="icon">
+        <i class="fas fa-crown text-success"></i>
+    </div>
+    <div class="complete_text">You've completed the Quiz!</div>
+    <div class="score_text"><span>and nice 😎, You got <p>2</p> out of <p>8</p>
+        </span></div>
+    <div class="buttons">
+        <form action="#" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-info">New Game</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends "_base.html" %}
+{% block content %}
+<div class="quiz_box activeQuiz">
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <header>
+            <div class="title">Django Quiz Application</div>
+        </header>
+        <section>
+            <div class="que_text"><span>1. What does HTML stand for?</span></div>
+            <div class="option_list">
+                <label class="option" for="answer_1">Hyper Transfer Markup Language
+                    <input type="radio" id="answer_1" name="answer" value="1" required>
+                </label>
+                <label class="option" for="answer_2">Hyper Text Markup Language
+                    <input type="radio" id="answer_2" name="answer" value="2" required>
+                </label>
+                <label class="option" for="answer_3">Hyperlink Text Manipulation Language
+                    <input type="radio" id="answer_3" name="answer" value="3" required>
+                </label>
+                <label class="option" for="answer_4">High-Level Text Markup Language
+                    <input type="radio" id="answer_4" name="answer" value="4" required>
+                </label>
+            </div>
+        </section>
+
+        <footer>
+            <div class="total_que"><span>
+                    <p>1</p> of <p>8</p> Questions
+                </span></div>
+            <button type="submit" class="next_btn show">Next Question</button>
+        </footer>
+    </form>
+</div>
+{% endblock content %}

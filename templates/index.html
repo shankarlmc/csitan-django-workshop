@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+{% block content %}
+<div class="info_box">
+    <div class="info-title">
+        <span>Let's play django quiz</span>
+    </div>
+    <div class="info-list">
+        <form action="#" method="POST">
+            {% csrf_token %}
+            <div class="form-input mb-4">
+                <label for="name" class="form-label">Enter your name</label>
+                <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Start Quiz</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
