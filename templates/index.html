@@ -2,10 +2,14 @@
 {% block content %}
 <div class="info_box">
     <div class="info-title">
+        {% if player_name %}
+        <span>Welcome {{player_name}}</span>
+        {% else %}
         <span>Let's play django quiz</span>
+        {% endif %}
     </div>
     <div class="info-list">
-        <form action="#" method="POST">
+        <form action="{% url 'home' %}" method="POST">
             {% csrf_token %}
             <div class="form-input mb-4">
                 <label for="name" class="form-label">Enter your name</label>
