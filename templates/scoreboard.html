@@ -5,10 +5,10 @@
         <i class="fas fa-crown text-success"></i>
     </div>
     <div class="complete_text">You've completed the Quiz!</div>
-    <div class="score_text"><span>and nice 😎, You got <p>2</p> out of <p>8</p>
+    <div class="score_text"><span>and nice 😎, You got <p>{{correct_answer}}</p> out of <p>{{total_questions}}</p>
         </span></div>
     <div class="buttons">
-        <form action="#" method="POST">
+        <form action="{% url 'reset_game' %}" method="POST">
             {% csrf_token %}
             <button type="submit" class="btn btn-info">New Game</button>
         </form>

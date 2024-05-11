@@ -1,7 +1,7 @@
 {% extends "_base.html" %}
 {% block content %}
 <div class="quiz_box activeQuiz">
-    <form action="#" method="POST">
+    <form action="{% url 'question' question.id %}" method="POST">
         {% csrf_token %}
         <header>
             <div class="title">Django Quiz Application</div>
@@ -10,8 +10,8 @@
             <div class="que_text"><span>{{question.id}}. {{question.title}}</span></div>
             <div class="option_list">
                 {% for answer in question.answers.all %}
-                <label class="option" for="answer_1">{{answer.title}}
-                    <input type="radio" id="answer_1" name="answer" value="1" required>
+                <label class="option" for="answer_{{answer.id}}">{{answer.title}}
+                    <input type="radio" id="answer_{{answer.id}}" name="answer" value="{{answer.id}}" required>
                 </label>
                 {% endfor %}
             </div>
@@ -19,7 +19,7 @@
 
         <footer>
             <div class="total_que"><span>
-                    <p>1</p> of <p>8</p> Questions
+                    <p>{{played_questions}}</p> of <p>{{total_no_of_questions}}</p> Questions
                 </span></div>
             <button type="submit" class="next_btn show">Next Question</button>
         </footer>

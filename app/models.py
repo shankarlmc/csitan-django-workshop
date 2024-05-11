@@ -5,6 +5,10 @@ class Question(models.Model):
     title = models.CharField(max_length=254)
     created_at = models.DateTimeField(auto_now_add=True)
     
+    @property
+    def answer(self):
+        return Answer.objects.filter(question=self, is_correct=True).first()
+    
     def __str__(self):
         return self.title
     
